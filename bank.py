@@ -7,8 +7,8 @@ input(" EMAIL : ")
 
 
 def details():
-    print("PLEASE FILL INN ALL YOUR INFORMATION TO BE REGISTERED SUCCESSFUL")
-
+   print("PLEASE FILL INN ALL YOUR INFORMATION TO BE REGISTERED SUCCESSFUL")
+   print ("You areabt to signUp pleases provide correct information")
 def deposit():
     balance=5000
     deposit = input("How much do you wamt to deposit: $")
@@ -20,22 +20,24 @@ def deposit():
 
 #withdrawal part
 def withdraw():
-    balance=5000
+    amount = input ("Please enter amount to withdraw:: ")
+    bank_balance=5000
+    bank_balance=int(bank_balance)
     money=3
-    amount=input ("Please enter amount to withdraw:: ")
     amount=int(amount)
-    if amount> balance:
+    if bank_balance<amount:
         print ("Your transpressions exceeds the current balance!. TRY AGAIN!!")
-    elif amount== balance:
+    elif bank_balance== amount:
         print("Mind you try to reduce your amnt.You need to have ${} in your account". format(money))
-    elif (amount < balance) and (amount!=balance) :
-        balanced=balance-amount
-        return balanced
+    elif  bank_balance > amount:
+        bal=bank_balance-amount
+        print ("Your New Balance is ${}".format (bal))
+        return bal
     else:
         print("OOOPs BUMMER")
 
 #This is an obvious one, this is where you check your balance.
-def bank_balance():
+def bank_New_balance():
 
     print( "Balance: $", balance)
     return balance
@@ -52,13 +54,13 @@ def main():
     press = input('What would you Like to Do? PLEASE SELECT ONE OF THE CHOICES ABOVE!!: ')
 
     if press == '1':
-        datails()
+        details()
     elif press == '2':
         deposit()
     elif press == '3':
         withdraw()
     elif press == '4':
-        bank_balance()
+        bank_New_balance()
     elif press == '5':  # this line exits the program (by selecting option )
         log= input("YOU ARE ABOUT TO EXIT? Y/N? ").upper()
         if log == 'Y':
